@@ -1,0 +1,80 @@
+﻿<Window x:Class="GeracaoEtiquetaZebraWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeracaoEtiquetaZebraWPF"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel 
+            Margin="20"
+            VerticalAlignment="Center"
+            >
+            <TextBlock 
+                Text="Gerador de Etiquetas" 
+                FontSize="32" 
+                TextAlignment="Center"
+                FontWeight="Bold" Margin="0,0,0,20"/>
+
+            <!-- Configuração Mês/Ano -->
+            <TextBlock Text="Mês e Ano (MMAA):" 
+                       TextAlignment="Center"                       
+                       Width="250"
+                       FontSize="24"                      
+                       />
+            <TextBox 
+                x:Name="txtMesAno" 
+                VerticalAlignment="Center"
+                TextAlignment="Center"
+                Height="30" 
+                Width="250"
+                FontSize="24" 
+                Text="0126"/>
+
+            <TextBlock>
+                
+            <LineBreak/>
+
+            </TextBlock>
+
+            <!-- Área de Leitura -->
+            <TextBlock 
+                Width="590"
+                FontSize="24" 
+                VerticalAlignment="Center"
+                Text="Leitura do Código de Barras (Digite 'FIM' para encerrar):" />
+            <!-- O evento KeyDown vai capturar o Enter do scanner -->
+            <TextBox x:Name="txtScanner" 
+             Height="30" 
+             FontSize="18" 
+             Width="590"
+             Background="#F0F0F0"
+             KeyDown="txtScanner_KeyDown"/>
+
+            <TextBlock>
+<LineBreak/>
+            </TextBlock>
+
+            <!-- Log Visual -->
+            <TextBlock x:Name="lblStatus"
+               FontWeight="Bold"     
+               FontSize="22"   
+               TextAlignment="Center"
+               Width="500"
+               VerticalAlignment="Center"
+               Text="Aguardando leitura..." 
+               Foreground="Gray" 
+               Margin="0,20,0,0" 
+               TextWrapping="Wrap"/>
+        </StackPanel>
+        <Image
+            Source="/images/logoprodatamobility.png"
+            HorizontalAlignment="Right"
+            Width="390"
+            VerticalAlignment="Bottom"
+            Margin="0, 0, 20, 20" />
+    </Grid>
+    
+</Window>
